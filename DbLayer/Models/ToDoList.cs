@@ -8,10 +8,10 @@ namespace DbLayer.Models {
 
   public class ToDoList {
 
-    //["hidden"]
+    [Require(true)]
     public int ToDoListId { get; set; }
 
-    //["Require"]
+    [Require(true)]
     public string Title { get; set; }
 
     public DateTime DueDate { get; set; }

@@ -5,3 +5,4 @@ E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.pdb
 E:\Development\Leverage\DbLayer\DbLayer\bin\Debug\DbLayer.exe.config
 E:\Development\Leverage\DbLayer\DbLayer\bin\Debug\DbLayer.exe
 E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.exe
+E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.csprojResolveAssemblyReference.cache
