@@ -48,10 +48,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\SQLContext.cs" />
+    <Compile Include="Migrations\201302031813254_InitialCreate.cs" />
+    <Compile Include="Migrations\201302031813254_InitialCreate.Designer.cs">
+      <DependentUpon>201302031813254_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302101141335_Adding_Customer.cs" />
+    <Compile Include="Migrations\201302101141335_Adding_Customer.Designer.cs">
+      <DependentUpon>201302101141335_Adding_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201302101317498_Adding_Email.cs" />
+    <Compile Include="Migrations\201302101317498_Adding_Email.Designer.cs">
+      <DependentUpon>201302101317498_Adding_Email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Attributes.cs" />
     <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\RegexClass.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\ToDoList.cs" />
+    <Compile Include="Models\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,7 +74,17 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201302031813254_InitialCreate.resx">
+      <DependentUpon>201302031813254_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302101141335_Adding_Customer.resx">
+      <DependentUpon>201302101141335_Adding_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201302101317498_Adding_Email.resx">
+      <DependentUpon>201302101317498_Adding_Email.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
