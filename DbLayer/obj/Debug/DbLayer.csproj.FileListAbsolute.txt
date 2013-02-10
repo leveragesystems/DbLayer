@@ -10,3 +10,13 @@ E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.Migrations.InitialCrea
 E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.csproj.GenerateResource.Cache
 E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.Migrations.Adding_Customer.resources
 E:\Development\Leverage\DbLayer\DbLayer\obj\Debug\DbLayer.Migrations.Adding_Email.resources
+E:\Development\Personal\DbLayer\DbLayer\bin\Debug\DbLayer.exe.config
+E:\Development\Personal\DbLayer\DbLayer\bin\Debug\DbLayer.exe
+E:\Development\Personal\DbLayer\DbLayer\bin\Debug\DbLayer.pdb
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.csprojResolveAssemblyReference.cache
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.Migrations.InitialCreate.resources
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.Migrations.Adding_Customer.resources
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.Migrations.Adding_Email.resources
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.csproj.GenerateResource.Cache
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.exe
+E:\Development\Personal\DbLayer\DbLayer\obj\Debug\DbLayer.pdb
