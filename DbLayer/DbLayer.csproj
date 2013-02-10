@@ -63,7 +63,7 @@
       <DependentUpon>201302101317498_Adding_Email.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="FrontEndModel\Attributes.cs" />
+    <Compile Include="FrontEndModel\ValidateAttribute.cs" />
     <Compile Include="Models\Customers.cs" />
     <Compile Include="FrontEndModel\RegexClass.cs" />
     <Compile Include="FrontEndModel\Resource.cs" />
