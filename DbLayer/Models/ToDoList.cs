@@ -8,12 +8,12 @@ namespace DbLayer.Models {
 
   public class ToDoList {
 
-    [Require(true)]
+    [Validate(RegexClass.Required, "Please provide the Id")]
     public int ToDoListId { get; set; }
 
-    [Require(true)]
+    [Validate(RegexClass.Required, "Please Provide a Title")]
     public string Title { get; set; }
-
+    
     public DateTime DueDate { get; set; }
 
     public bool Completed { get; set; }

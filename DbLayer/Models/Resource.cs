@@ -9,6 +9,6 @@ namespace DbLayer.Models {
     public string Name { get; set; }
 
     public string Value { get; set; }
-    public bool Required { get; set; }
+    public List<Validation> Validations { get; set; }
   }
 }
