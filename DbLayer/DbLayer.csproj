@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Context\SQLContext.cs" />
     <Compile Include="Models\Attributes.cs" />
+    <Compile Include="Models\Customers.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\ToDoList.cs" />
     <Compile Include="Program.cs" />
