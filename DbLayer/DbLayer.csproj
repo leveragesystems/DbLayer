@@ -38,6 +38,12 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\leverage_api\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\leverage_api\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -49,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Common\IEntity.cs" />
     <Compile Include="Context\SQLContext.cs" />
     <Compile Include="Migrations\201302031813254_InitialCreate.cs" />
     <Compile Include="Migrations\201302031813254_InitialCreate.Designer.cs">
@@ -67,10 +75,13 @@
     <Compile Include="Models\Customers.cs" />
     <Compile Include="FrontEndModel\RegexClass.cs" />
     <Compile Include="FrontEndModel\Resource.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\ToDoList.cs" />
     <Compile Include="FrontEndModel\Validation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\MongoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
