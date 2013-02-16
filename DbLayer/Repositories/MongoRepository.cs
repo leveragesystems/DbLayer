@@ -35,17 +35,18 @@ namespace DbLayer.Repositories {
       throw new NotImplementedException();
     }
 
-    public IQueryable<T> Get() {
-      throw new NotImplementedException();
+    public IEnumerable<T> Get() {
+      return this.Collection.FindAll();
     }
 
-    public T Get(int id) {
-      throw new NotImplementedException();
+    public T Get(Guid id) {
+      return this.Collection.Find(Query.EQ("_id", id)).First<T>();
     }
 
     public bool Delete<T>(T entity) {
       try {
-        this.Collection.Remove(Query.EQ("_id", (entity as Entity<U>).Id.ToBson<U>()));
+        var id = (entity as Entity<Guid>).Id;
+        this.Collection.Remove(Query.EQ("_id", id));
         return true;
       } catch {
         return false;

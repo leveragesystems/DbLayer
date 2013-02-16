@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DbLayer.Models {
-  public class Person : Entity<int> {
+  public class Person : Entity<Guid> {
     public string FirstName { get; set; }
 
     public int Age { get; set; }

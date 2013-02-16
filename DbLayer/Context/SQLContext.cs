@@ -14,5 +14,7 @@ namespace DbLayer.Context {
 }
     public DbSet<ToDoList> ToDoLists { get; set; }
     public DbSet<Customers> Customers { get; set; }
+
+    public DbSet<Person> People { get; set; }
   }
 }
