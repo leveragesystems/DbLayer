@@ -8,21 +8,20 @@ namespace DbLayer.Migrations
         public override void Up()
         {
             CreateTable(
-                "dbo.Customers",
+                "dbo.People",
                 c => new
                     {
-                        CustomersId = c.Int(nullable: false, identity: true),
-                        Title = c.String(),
-                        Created = c.DateTime(nullable: false),
-                        Name = c.String(),
+                        Id = c.Guid(nullable: false),
+                        FirstName = c.String(),
+                        Age = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.CustomersId);
+                .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
-            DropTable("dbo.Customers");
+            DropTable("dbo.People");
         }
     }
 }
