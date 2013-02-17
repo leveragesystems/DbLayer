@@ -7,12 +7,21 @@ namespace DbLayer.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Customers", "Email", c => c.String());
+            CreateTable(
+                "dbo.People",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        FirstName = c.String(),
+                        Age = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Customers", "Email");
+            DropTable("dbo.People");
         }
     }
 }
