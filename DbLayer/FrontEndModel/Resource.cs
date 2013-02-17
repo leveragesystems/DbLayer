@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DbLayer.Models {
   public class Resource {
-    public string Name { get; set; }
+    public string Property { get; set; }
 
-    public string Value { get; set; }
+    public string Type { get; set; }
     public List<Validation> Validations { get; set; }
   }
 }

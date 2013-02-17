@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 namespace DbLayer.Models {
   [System.AttributeUsage(System.AttributeTargets.Property,
                        AllowMultiple = true)]  // multiuse attribute
-  public class Validate : Attribute {
+  public class ValidateAttribute : Attribute {
     public string Regex { get; set; }
     public string Message { get; set; }
 
-    public Validate(string regex) {
+    public ValidateAttribute(string regex) {
       Regex = regex;
     }
-    public Validate(string regex, string message) {
+    public ValidateAttribute(string regex, string message) {
       Regex = regex;
       Message = message;
     }
