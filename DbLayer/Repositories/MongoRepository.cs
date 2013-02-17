@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 
-namespace DbLayer.Repositories  {
+namespace DbLayer.Repositories {
   public sealed class MongoRepository<T, U> : IRepository<T, U> where T : Entity<U> {
 
     public MongoCollection<T> Collection {
       get {
-        var db = MongoDatabase.Create(this.ConnectionString);
+        //var db = MongoDatabase.Create(this.ConnectionString); // MongoDatabase.Create is obsolete
+        var mongoClient = new MongoClient(this.ConnectionString);
+        var mongoServer = mongoClient.GetServer();
+        var db = mongoServer.GetDatabase(this.DataBaseName);
+
         return db.GetCollection<T>(typeof(T).Name + "s");
       }
     }
@@ -26,6 +31,7 @@ namespace DbLayer.Repositories  {
     #region IRepository<T,U> Implementation
 
     public string ConnectionString { get; set; }
+    public string DataBaseName { get; set; }
 
     public T Update<T>(string id, T entity) {
       throw new NotImplementedException();
@@ -139,6 +145,6 @@ namespace DbLayer.Repositories  {
     //  return result.UpdatedExisting;
     //} 
 
- 
+
   }
 }
