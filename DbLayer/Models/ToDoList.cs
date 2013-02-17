@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace DbLayer.Models {
 
-  public class ToDoList {
-
-    [Validate(RegexClass.Required, "Please provide the Id")]
-    public int ToDoListId { get; set; }
+  public class ToDoList :Entity<Guid>{
 
     [Validate(RegexClass.Required, "Please Provide a Title")]
     public string Title { get; set; }
