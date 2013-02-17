@@ -13,6 +13,21 @@
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\leverage_api\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,7 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\leverage_api\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\..\leverage_api\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Bson.dll</HintPath>
@@ -57,20 +72,28 @@
   <ItemGroup>
     <Compile Include="Common\Entity.cs" />
     <Compile Include="Context\SQLContext.cs" />
-    <Compile Include="Migrations\201302031813254_InitialCreate.cs" />
+    <Compile Include="FrontEndModel\ValidateAttribute.cs" />
+    <Compile Include="Migrations\201302031813254_InitialCreate.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201302031813254_InitialCreate.Designer.cs">
       <DependentUpon>201302031813254_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201302101141335_Adding_Customer.cs" />
+    <Compile Include="Migrations\201302101141335_Adding_Customer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201302101141335_Adding_Customer.Designer.cs">
       <DependentUpon>201302101141335_Adding_Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201302101317498_Adding_Email.cs" />
+    <Compile Include="Migrations\201302101317498_Adding_Email.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Migrations\201302101317498_Adding_Email.Designer.cs">
       <DependentUpon>201302101317498_Adding_Email.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="FrontEndModel\ValidateAttribute.cs" />
+    <Compile Include="Migrations\Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\Customers.cs" />
     <Compile Include="FrontEndModel\RegexClass.cs" />
     <Compile Include="FrontEndModel\Resource.cs" />
@@ -85,6 +108,24 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201302031813254_InitialCreate.resx">
