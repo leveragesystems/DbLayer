@@ -7,7 +7,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 
-namespace DbLayer.Repositories {
+namespace DbLayer.Repositories  {
   public sealed class MongoRepository<T, U> : IRepository<T, U> where T : Entity<U> {
 
     public MongoCollection<T> Collection {
