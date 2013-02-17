@@ -107,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="CodeTemplates\AddController\ApiControllerMongo.tt" />
+    <Content Include="CodeTemplates\AddController\ApiControllerWithContext.tt" />
+    <Content Include="CodeTemplates\AddController\RepositoryController.tt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
