@@ -1,19 +1,22 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Data.Entity;
+using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 
-namespace DbLayer.Repositories  {
-  public class MongoRepository<T, U> : IRepository<T, U> where T : Entity<U> {
+namespace DbLayer.Repositories {
 
      public MongoCollection<T> Collection {
       get {
-        var db = MongoDatabase.Create(this.ConnectionString);
+        //var db = MongoDatabase.Create(this.ConnectionString); // MongoDatabase.Create is obsolete
+        var mongoClient = new MongoClient(this.ConnectionString);
+        var mongoServer = mongoClient.GetServer();
+        var db = mongoServer.GetDatabase(this.DataBaseName);
+
         return db.GetCollection<T>(typeof(T).Name + "s");
       }
     }
@@ -27,6 +30,7 @@ namespace DbLayer.Repositories  {
     #region IRepository<T,U> Implementation
 
     public string ConnectionString { get; set; }
+    public string DataBaseName { get; set; }
 
     public T Update<T>(string id, T entity) {
       throw new NotImplementedException();
@@ -93,5 +97,53 @@ namespace DbLayer.Repositories  {
     }
 
     #endregion
- }
+
+    //protected T DataTable;
+
+    //public MongoRepository(string connection) {
+
+    //  if (string.IsNullOrWhiteSpace(connection)) {
+    //    connection = "mongodb://localhost:27017";
+    //  }
+    //  var db = MongoDatabase.Create(connection);
+    //  MongoCollection<T> collection = _database.GetCollection<T>(typeof(T).Name + "s");
+
+    //}
+
+    //public IEnumerable<T> GetAllContacts() {
+    //  return _contacts.FindAll();
+    //}
+
+    //public Contact GetContact(string id) {
+    //  IMongoQuery query = Query.EQ("_id", id);
+    //  return _contacts.Find(query).FirstOrDefault();
+    //}
+
+    //public Contact AddContact(Contact item) {
+    //  item.Id = ObjectId.GenerateNewId().ToString();
+    //  item.LastModified = DateTime.UtcNow;
+    //  _contacts.Insert(item);
+    //  return item;
+    //}
+
+    //public bool RemoveContact(string id) {
+    //  IMongoQuery query = Query.EQ("_id", id);
+    //  SafeModeResult result = _contacts.Remove(query);
+    //  return result.DocumentsAffected == 1;
+    //}
+
+    //public bool UpdateContact(string id, Contact item) {
+    //  IMongoQuery query = Query.EQ("_id", id);
+    //  item.LastModified = DateTime.UtcNow;
+    //  IMongoUpdate update = Update
+    //      .Set("Email", item.Email)
+    //      .Set("LastModified", DateTime.UtcNow)
+    //      .Set("Name", item.Name)
+    //      .Set("Phone", item.Phone);
+    //  SafeModeResult result = _contacts.Update(query, update);
+    //  return result.UpdatedExisting;
+    //} 
+
+
+  }
 }
