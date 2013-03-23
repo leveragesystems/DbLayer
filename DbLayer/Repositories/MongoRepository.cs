@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Configuration;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,6 +10,7 @@ using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 
 namespace DbLayer.Repositories {
+  public class MongoRepository<T, U> : IRepository<T, U> where T : Entity<U> {
 
      public MongoCollection<T> Collection {
       get {
