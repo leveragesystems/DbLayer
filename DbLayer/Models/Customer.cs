@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DbLayer.Models {
-  public class Customers {
+  public class Customer : Entity<int> {
+    
+    // Why this Id and not use the Entity<int> Id?
     [Validate(RegexClass.Required, "Please provide an Id")]
     public int CustomersId { get; set; }
 

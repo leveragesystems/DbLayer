@@ -2,7 +2,7 @@
 
 namespace DbLayer.Models {
 
-  public class ToDoList :Entity<Guid>{
+  public class ToDoList : Entity<Guid>{
 
     [Validate(RegexClass.Required, "Please Provide a Title")]
     public string Title { get; set; }

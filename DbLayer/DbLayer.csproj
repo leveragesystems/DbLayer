@@ -95,7 +95,7 @@
     <Compile Include="Migrations\Configuration.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="FrontEndModel\RegexClass.cs" />
     <Compile Include="FrontEndModel\Resource.cs" />
     <Compile Include="Models\Person.cs" />
