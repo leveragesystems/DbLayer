@@ -54,10 +54,10 @@
       <HintPath>..\..\leverage_api\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\..\leverage_api\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver">
-      <HintPath>..\..\leverage_api\packages\mongocsharpdriver.1.7\lib\net35\MongoDB.Driver.dll</HintPath>
+      <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -98,7 +98,10 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="FrontEndModel\RegexClass.cs" />
     <Compile Include="FrontEndModel\Resource.cs" />
+    <Compile Include="Models\Party.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\RoleType.cs" />
     <Compile Include="Models\ToDoList.cs" />
     <Compile Include="FrontEndModel\Validation.cs" />
     <Compile Include="Program.cs" />
@@ -107,7 +110,11 @@
     <Compile Include="Repositories\MongoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReadMe.md" />
     <None Include="App.config" />
+    <Content Include="CodeTemplates\AddController\ApiControllerMongo.tt" />
+    <Content Include="CodeTemplates\AddController\ApiControllerWithContext.tt" />
+    <Content Include="CodeTemplates\AddController\RepositoryController.tt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
@@ -141,7 +148,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
