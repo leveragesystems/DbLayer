@@ -9,8 +9,9 @@ using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 
 namespace DbLayer.Repositories {
+  public  class MongoRepository<T, U> : IRepository<T, U> where T : Entity<U> {
 
-     public MongoCollection<T> Collection {
+    public MongoCollection<T> Collection {
       get {
         //var db = MongoDatabase.Create(this.ConnectionString); // MongoDatabase.Create is obsolete
         var mongoClient = new MongoClient(this.ConnectionString);

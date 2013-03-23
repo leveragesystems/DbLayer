@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DbLayer.Models {
-  class Product {
+  public class Product : Entity<int> {
     [Validate(RegexClass.Required, "Please provide an Id")]
     public int ProductId { get; set; }
     public string Name { get; set; }
